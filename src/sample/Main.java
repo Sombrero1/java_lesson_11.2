@@ -53,13 +53,6 @@ public class Main extends Application {
 
 
 
-
-        Label compassE = new Label("E");
-        Label compassSE = new Label("SE");
-        Label compassS = new Label("S");
-        Label compassSW = new Label("SW");
-
-
         Label [] compass=new Label[]{
                    new Label("NW"),
                    new Label("N"),
@@ -67,14 +60,31 @@ public class Main extends Application {
                    new Label("W"),
                    new Label("Center"),
                    new Label("E"),
-                new Label("SW"),
-                new Label("S"),
-                new Label("SE")
+                   new Label("SW"),
+                   new Label("S"),
+                   new Label("SE")
         };
 
 
 
         root.setGridLinesVisible(true);
+
+
+        for (Node t: root.getChildren()
+        ) { ;
+
+            t.setOnMouseEntered(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    System.out.println("" );
+
+
+
+                }
+            });
+
+        }
+
 
 
         for (int i = 0, value=0; i < 3; i++) {
@@ -83,42 +93,27 @@ public class Main extends Application {
             }
 
         }
-//
 
-        for (Label t:compass
-        ) {
-            GridPane.setHalignment(t, HPos.CENTER);
-            t.setOnMouseEntered(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                alert.show();
-                alert.setTitle("Бам-бааам");
-                alert.setHeaderText("Тук-тук");
-                alert.setContentText("Вы на " + t.getText());
 
-            }
-        });
-        }
+
 
 //
-//        for (Node t: root.getChildren()
+
+//        for (Label t:compass
 //        ) {
-//                GridPane.setHalignment(t, HPos.CENTER);
-//                t.setOnMouseEntered(new EventHandler<MouseEvent>() {
-//                    @Override
-//                    public void handle(MouseEvent mouseEvent) {
-//
-//
-//                        if(t instanceof Group) {
-//                            alert.show();
-//                            alert.setTitle("Бам-бааам");
-//                            alert.setHeaderText("Тук-тук");
-//                            alert.setContentText("Вы на ");
-//                        }
-//                    }
-//                });
+//            GridPane.setHalignment(t, HPos.CENTER);
+//            t.setOnMouseEntered(new EventHandler<MouseEvent>() { //рабочее
+//            @Override
+//            public void handle(MouseEvent mouseEvent) {
+//                alert.show();
+//                alert.setTitle("Бам-бааам");
+//                alert.setHeaderText("Тук-тук");
+//                alert.setContentText("Вы на " + t.getText());
 //
 //            }
+//        });
+        
+
 
 
 
